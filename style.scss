@@ -1,4 +1,7 @@
 $background-color: white;
+$text-color: #000000;
+$menu-color: #ffcc01;
+$toggle-color: #000000;
 
 body {
   background-color: $background-color;
@@ -24,13 +27,54 @@ nav {
 .toggle {
   display: none;
 }
-.menu{
+.menu {
   padding: 0;
   margin: 0;
   height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items:center ;
+  align-items: center;
   list-style-type: none;
+}
+.menu li a {
+  color: $text-color;
+  text-decoration: none;
+  align-self: center;
+  font-size: 13px;
+  padding: 10px 15px;
+  transition: background-color 0.1s linear;
+}
+.menu li a:hover {
+  background-color: $menu-color;
+  border-radius: 3px;
+}
+.menu li a.logo {
+  font-size: 25px;
+  margin-right: 240px;
+}
+.menu li a.contacts {
+  margin-right: 100px;
+}
+
+@media screen and (max-width: 765px) {
+  .toggle {
+    clear: both;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    width: 100%;
+    color: $toggle-color;
+    background: $menu-color;
+    transition: all 0.1s linear;
+  }
+  .toggle:hover {
+    background: $toggle-color;
+  }
+  #checkbox-menu:checked + label .touch li {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.7s linear;
+  }
 }
