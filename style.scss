@@ -69,12 +69,47 @@ nav {
     background: $menu-color;
     transition: all 0.1s linear;
   }
+
   .toggle:hover {
-    background: $toggle-color;
+    background: #d3a900;
   }
   #checkbox-menu:checked + label .touch li {
     opacity: 1;
     visibility: visible;
     transition: all 0.7s linear;
+  }
+
+  #checkbox-menu:checked + label .touch {
+    height: 350px;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 0;
+    transition: height 0.3s linear;
+
+    li {
+      display: flex;
+      align-self: center;
+      width: 95%;
+      opacity: 0;
+      visibility: hidden;
+
+      a {
+        width: 95%;
+        text-align: center;
+        align-self: center;
+        align-content: center;
+      }
+    }
+  }
+  .menu li a.logo {
+    font-size: 25px;
+    margin-right: 0px;
+  }
+  .menu li a.contacts {
+    margin-right: 0px;
   }
 }
